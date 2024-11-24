@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/bemorlar/bemor.css" />
+    <title>Web Design Mastery | HealthCare</title>
+  </head>
+  <body>
+    <header>
+      <nav class="section__container nav__container">
+        <div class="nav__logo">Health<span>Care</span></div>
+        <ul class="nav__links forHead" style="display: flex;">
+         <li class="link"><a href="#home">Asosiy</a></li>
+          <li class="link"><a href="#about">Klinika haqida</a></li>
+          <li class="link"><a href="#service">Xizmatlar</a></li>
+          <li class="link"><a href="#pages">Pages</a></li>
+          <li class="link"><a href="#blog">Blog</a></li>
+        </ul>
+        <ul class="nav__links forDoctor"  style="display: none;">
+         <li class="link"><a href="#home">Asosiy</a></li>
+          <li class="link"><a href="#about">Klinika haqida</a></li>
+          <li class="link"><a href="#service">Bemorlar</a></li>
+          <li class="link"><a href="#pages">Pages</a></li>
+          <li class="link"><a href="#blog">Blog</a></li>
+        </ul>
+        <ul class="nav__links forBemor" style="display: none;">
+         <li class="link"><a href="#home">Asosiy</a></li>
+         <li class="link"><a href="#about">Klinika haqida</a></li>
+         <li class="link"><a href="#service">Xizmatlar</a></li>
+          <li class="link"><a href="#service">Kartamni ko'rish</a></li>
+          <li class="link"><a href="#pages">Pages</a></li>
+          <li class="link"><a href="#blog">Blog</a></li>
+        </ul>
+        <p>
+          <!-- <button class="loginBtn">Kirish</button> -->
+        <!-- <button class="btn">Contact Us</button> -->
+        </p>
+      </nav>
+      <div class="section__container header__container" id="home">
+        <div class="header__content">
+          <h1>Har bir bemor biz uchun ahamiyatlidir</h1>
+          <p>
+            Bemorning sog'lig'i bizning ustuvor vazifamiz bo'lgan, xush kelibsiz.
+            Mehribonlik bilan g'amxo'rlik, eng zamonaviy jihozlar va
+            bemorga yo'naltirilgan yondashuv, biz sizning farovonligingizga bag'ishlanganmiz. Biz bilan 
+            sog'ligingizdagi farqni his qiling.
+          </p>
+          <!-- <button class="btn">See Services</button> -->
+        </div>
+        
+      </div>
+    </header>
+
+    <div class="section__container greenBg">
+        <ol class="bemorlar">
+            <li><a href="/tashxis.html"><span id="ism">Salimboy</span> <span id="fam">Axmadov</span></a></li>
+        </ol>
+    </div>
+
+    <footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <h3>Health<span>Care</span></h3>
+          <p>
+            Biz har bir bemor uchun mas'ulmiz va ular haqida qayg'uramiz.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium corporis ullam, molestiae illo distinctio id maiores deserunt tempora sit, unde accusamus earum illum accusantium architecto est. Commodi voluptatem fuga praesentium.
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>Klinika haqida</h4>
+          <p>Asosiy</p>
+          <p>Klinika haqida</p>
+          <p>Xodimlar</p>
+          <p>Bizning blog</p>
+        </div>
+        <div class="footer__col">
+          <h4>Xizmatlar</h4>
+          <p>Search Terms</p>
+          <p>Advance Search</p>
+          <p>Privacy Policy</p>
+          <p>Bizning arxiv</p>
+        </div>
+        <div class="footer__col">
+          <h4>Biz bilan bog'laning</h4>
+          <p>
+            <i class="ri-map-pin-2-fill"></i> Toshkent, Oybek ko'chasi 49-uy
+          </p>
+          <p><i class="ri-mail-fill"></i> sklinika@gmail.com</p>
+          <p><i class="ri-phone-fill"></i> +998 99 996 96 96</p>
+        </div>
+      </div>
+      <div class="footer__bar">
+        <div class="footer__bar__content">
+          <p>Copyright © 2023 Web Design Mastery. Barcha xizmatlar kafolatlanadi.</p>
+          <div class="footer__socials">
+            <span><i class="ri-instagram-line"></i></span>
+            <span><i class="ri-facebook-fill"></i></span>
+            <span><i class="ri-heart-fill"></i></span>
+            <span><i class="ri-twitter-fill"></i></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+        let list_Ol = document.querySelector("ol");
+
+        let info = JSON.parse(localStorage.getItem("info"));
+
+        console.log(info);
+        for (let i = 0; i < info.length; i++) {
+            list_Ol.innerHTML += `
+            <li><a href="#"><span id="ism">${info[i].ism}</span> <span id="fam">${info[i].fam}</span></a></li>
+            `
+            console.log(1);
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambulator Tibbiy Karta</title>
+    <link rel="stylesheet" href="/kartam.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="left">
+                <p>O'zbekiston Respublikasi <br>
+                    Sog'liqni saqlash vazirligi</p>
+            </div>
+            <div class="right">
+                <p>O'zbekiston Respublikasi <br>
+                    Sog'liqni saqlash vazirligi <br>
+                    2022 yil 17 yanvardagi №15 sonli <br>
+                    buyrug'i bilan tasdiqlangan <br>
+                    025 shaklli tibbiy hujjat shakli</p>
+            </div>
+        </header>
+        <h1>Bemorning elektron tibbiy kartasi</h1>
+        <table>
+            <tr>
+                <td>1. Familiya, ismi:</td>
+                <td>Lorem Ipsum</td>
+            </tr>
+            <tr>
+                <td>2. Tug'ilgan sana/oy/yil:</td>
+                <td>01.01.1990</td>
+            </tr>
+            <tr>
+                <td>3. Jinsi:</td>
+                <td>Эркак</td>
+            </tr>
+            <tr>
+                <td>4. Yashash joyi:</td>
+                <td>Lorem Ipsum, 123</td>
+            </tr>
+            <tr>
+                <td>5. Qo'ng'iroq uchun telefon:</td>
+                <td>+998 90 123 45 67</td>
+            </tr>
+            <tr>
+                <td>7. Vaqtincha yashash joyi:</td>
+                <td>Lorem Ipsum City</td>
+            </tr>
+            <tr>
+                <td>8. Ro'yxatga olish sanas:</td>
+                <td>01.01.2024</td>
+            </tr>
+            <tr>
+                <td>9. Ro'yxatdan chiqish sanasi:</td>
+                <td>01.01.2025</td>
+            </tr>
+        </table>
+        <h2>Qon guruhi</h2>
+        <p>Lorem Ipsum</p>
+        <h2>Muhim belgilari</h2>
+        <p>Lorem Ipsum</p>
+    </div>
+    <br>
+    <div class="container">
+        <h2>Tashxislar</h2>
+        <div class="wrapper">
+
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let wrapper = document.querySelector(".wrapper");
+
+        let info = JSON.parse(localStorage.getItem('tashxislar'));
+        let doktor = JSON.parse(localStorage.getItem('doktor'));
+        // console.log(doktor);
+        let n = info.length;
+        for (let i = 0; i < n; i++) {
+            wrapper.innerHTML = `
+            <table>
+                <tr>
+                    <td>Tashxis raqami:</td>
+                    <td>${i}</td>
+                </tr>
+                <tr>
+                    <td>Murojaat etgan sana: </td>
+                    <td>${info[i].time}</td>
+                </tr>
+                <tr>
+                    <td>Qo'yilgan tashxis</td>
+                    <td>${info[i].tashxis}</td>
+                </tr>
+                <tr>
+                    <td>Davolanish davri</td>
+                    <td>${info[i].duration}</td>
+                </tr>
+                <tr>
+                    <td>Tavsiya berilgan dorilar</td>
+                    <td>${info[i].dori}</td>
+                </tr>
+                <tr>
+                    <td>Shifokor ism, familiyasi</td>
+                    <td>${doktor[0].fish}</td>
+                </tr>
+                <tr>
+                    <td>Kasbi</td>
+                    <td>${doktor[0].kasbi}</td>
+                </tr>
+            </table>
+            `
+        }
+    </script>
+</body>
+</html>

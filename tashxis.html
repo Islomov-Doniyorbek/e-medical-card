@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tashxislar</title>
+    <link rel="stylesheet" href="/tashxis.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="left">
+                <p>O'zbekiston Respublikasi <br>
+                    Sog'liqni saqlash vazirligi</p>
+            </div>
+            <div class="right">
+                <p>O'zbekiston Respublikasi <br>
+                    Sog'liqni saqlash vazirligi <br>
+                    2022 yil 17 yanvardagi №15 sonli <br>
+                    buyrug'i bilan tasdiqlangan <br>
+                    025 shaklli tibbiy hujjat shakli</p>
+            </div>
+        </header>
+        <h1>Bemor uchun tashxis</h1>
+    </div>
+    <br>
+    <div class="container">
+        <h2>Kasallik bo'yicha tashxis ma'lumotlari</h2>
+        <table>
+            <tr>
+                <td>Tashxis raqami:</td>
+                <td>0001</td>
+            </tr>
+            <tr>
+                <td>Murojaat etgan sana: </td>
+                <td><input type="date" name="" id="date"></td>
+            </tr>
+            <tr>
+                <td>Qo'yilgan tashxis</td>
+                <td><input type="text" id="tashxis"></td>
+            </tr>
+            <tr>
+                <td>Davolanish davri</td>
+                <td><input type="text" id="davomiylik"></td>
+            </tr>
+            <tr>
+                <td>Tavsiya berilgan dorilar</td>
+                <td><input type="text" id="dorilar"></td>
+            </tr>
+            <tr>
+                <td>Saqlash</td>
+                <td><button id="save" type="submit">Saqlash</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        let date, tashxis, duration, dori;
+
+        date = document.querySelector("#date");
+        duration = document.querySelector("#davomiylik");
+        tashxis = document.querySelector("#tashxis");
+        dori = document.querySelector("#dorilar");
+        let save = document.querySelector("#save");
+
+        function saqlaMalumot(yangiMalumot) {
+            let malumotlar = JSON.parse(localStorage.getItem('tashxislar')) || []; // Agar malumotlar bo'lmasa, bo'sh massiv yaratadi
+            malumotlar.push(yangiMalumot);
+            localStorage.setItem('tashxislar', JSON.stringify(malumotlar));
+        }
+
+
+        save.addEventListener("click", ()=>{
+
+            saqlaMalumot({ time: date.value, duration: duration.value, tashxis: tashxis.value, dori: dori.value });
+
+        })
+        let saqlanganMalumotlar = JSON.parse(localStorage.getItem('tashxislar'));
+        console.log(saqlanganMalumotlar[0].time); // [{ism: 'Ali', yoshi: 25}, {ism: 'Vali', yoshi: 30}]
+        console.log(saqlanganMalumotlar.length); // [{ism: 'Ali', yoshi: 25}, {ism: 'Vali', yoshi: 30}]
+    </script>
+</body>
+</html>
